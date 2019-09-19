@@ -1,4 +1,8 @@
-
+/**
+ * 归并排序
+ * 
+ * 拆分数组，从长度为1的数组开始排序合并，最终返回的就是排好序的数组
+ */
 
 const testArr = [6, 1, 2, 7, 9, 3,  4, 6, 6, 6, 5, 10, 8];
 
@@ -36,6 +40,3 @@ const merge = (prev, last) => {
 
 const result = mergeSort(testArr);
 console.log(result);
-
-
-
