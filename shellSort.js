@@ -11,7 +11,7 @@ const shellSort = arr => {
     }
   }
   return arr;
-};
+}; 
 
 const result = shellSort(testArr);
 console.log(result);
