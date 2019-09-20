@@ -30,9 +30,14 @@ const createMaxHeap = (arr, len) => {
   for (let i = lastRootNodeIndex; i >= 0; i--) {
     let leftChildIndex = 2 * i + 1;
     let rightChildIndex = 2 * i + 2;
+
+    /**  堆排序中，构建大顶堆时，len之后的元素有可能是最后一个非叶子节点的右孩子参与计算，所以要过滤掉右孩子大于len的的场景
+     * 为什么不需要判断左孩子： 非叶子节点至少有一个左孩子
+     */
     if (rightChildIndex >= len) {
       rightChildIndex = -1;
     }
+
     if (Math.max(arr[leftChildIndex], arr[rightChildIndex]) > arr[i]) {
       if (arr[leftChildIndex] > arr[rightChildIndex]) {
         [arr[i], arr[leftChildIndex]] = [arr[leftChildIndex], arr[i]];
