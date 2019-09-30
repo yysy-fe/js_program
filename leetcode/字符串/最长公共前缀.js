@@ -5,20 +5,20 @@
 const testArr = ['float', 'flower', 'floor'];
 
 const fn = arr => {
-  if (strs.length === 0) return '';
-  let j = 0, pre = strs[0][0], res = ''
-  for (let i = 0; i < strs.length; i++) {
+  if (arr.length === 0) return '';
+  let j = 0, pre = arr[0][0], res = ''
+  for (let i = 0; i < arr.length; i++) {
     let isSame = true
-    if (strs[i][j] !== pre) {
+    if (arr[i][j] !== pre) {
       isSame = false;
       return res;
     }
 
-    if (isSame && i === strs.length - 1) {
+    if (isSame && i === arr.length - 1) {
       res += pre;
       i = -1;
       j++;
-      pre = strs[0][j];
+      pre = arr[0][j];
     }
   }
   return res;
