@@ -11,7 +11,8 @@ const bubbleSort = arr => {
     let complete = true;
     for (let j = 0; j < end - i; j++) {
       if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; 
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        // 顺序变化，不能结束冒泡
         complete = false;
       }
     }
