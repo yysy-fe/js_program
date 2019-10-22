@@ -8,15 +8,20 @@ const fn = str => {
   let obj = {};
   for (let i = 0; i < str.length; i++) {
     if (obj[str[i]]) {
-      obj[str[i]] += 1;
+      obj[str[i]].times += 1;
     } else {
-      obj[str[i]] = 1;
+      obj[str[i]] = {
+        times: 1,
+        index: i
+      };
     }
   }
 
   for (let k in obj) {
-    if (obj[k] === 1) return k;
+    if (obj[k].times === 1) return obj[k].index;
   }
+  
+  return -1;
 };
 
 const result = fn(testStr);
