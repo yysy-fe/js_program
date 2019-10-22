@@ -1,7 +1,7 @@
 var fib = function(N) {
-  if (N < 2) return N;
-  let queue = [1, 0];
-  let res = 1;
+  if (N < 1) return N;
+  if (N === 2) return 1;
+  let queue = [1, 1];
   for (let i = 2; i < N; i++) {
     queue.unshift(queue[0] + queue[1])
   }
